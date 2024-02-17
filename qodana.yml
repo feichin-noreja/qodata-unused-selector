@@ -1,0 +1,88 @@
+---
+#-------------------------------------------------------------------------------#
+#               Qodana analysis is configured by qodana.yaml file               #
+#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
+#-------------------------------------------------------------------------------#
+version: "1.0"
+#Specify inspection profile for code analysis
+profile:
+  name: qodana.recommended
+#Enable inspections
+#include:
+#  - name: <SomeEnabledInspectionId>
+include:
+  - name: Eslint
+  - name: CssUnusedSymbol
+  - name: EmptyCatchBlockJS
+  - name: EmptyFinallyBlockJS
+  - name: EmptyTryBlockJS
+  - name: JSMissingSwitchBranches
+  - name: JSMissingSwitchDefault
+  - name: JSRedundantSwitchStatement
+  - name: NestedSwitchStatementJS
+  - name: TextLabelInSwitchStatementJS
+  - name: SassScssResolvedByNameOnly
+  - name: SassScssUnresolvedMixin
+  - name: SassScssUnresolvedPlaceholderSelector
+  - name: SassScssUnresolvedVariable
+  - name: QodanaSanity
+  - name: LocalVariableNamingConventionJS
+  - name: ParameterNamingConventionJS
+  - name: FunctionNamingConventionJS
+  - name: JSClassNamingConvention
+  - name: PackageJsonMismatchedDependency
+  - name: UpdateDependencyToLatestVersion
+  - name: JSUrlImportUsage
+  - name: CheckEmptyScriptTag
+  - name: HtmlUnknownBooleanAttribute
+  - name: CheckValidXmlInScriptTagBody
+  - name: CheckImageSize
+  - name: HtmlMissingClosingTag
+  - name: HtmlDeprecatedAttribute
+  - name: HtmlDeprecatedTag
+  - name: StatementsPerFunctionJS
+  - name: CyclomaticComplexityJS
+  - name: ParametersPerFunctionJS
+  - name: CheckThirdPartySoftwareList
+  - name: CheckModuleLicenses
+  - name: CheckDependencyLicenses
+  - name: CssDeprecatedValue
+  - name: CssReplaceWithShorthandSafely
+  - name: CssReplaceWithShorthandUnsafely
+  - name: ForLoopReplaceableByWhileJS
+  - name: IfStatementWithIdenticalBranchesJS
+  - name: IfStatementWithTooManyBranchesJS
+  - name: ConditionalExpressionWithIdenticalBranchesJS
+  - name: DuplicateConditionJS
+  - name: HtmlFormInputWithoutLabel
+  - name: HtmlRequiredAltAttribute
+  - name: HtmlRequiredLangAttribute
+  - name: HtmlRequiredSummaryAttribute
+  - name: HtmlRequiredTitleAttribute
+  - name: HtmlRequiredTitleElement
+  - name: StandardJS
+  - name: Stylelint
+  - name: TsLint
+  - name: JSDeclarationsAtScopeStart
+  - name: ChainedEqualityJS
+  - name: ReuseOfLocalVariableJS
+  - name: EjsUnresolvedInclude
+  - name: NestingDepthJS
+  - name: EmptyDirectory
+  - name: TodoComment
+  - name: VulnerableLibrariesGlobal
+  - name: ShellCheck
+  - name: JSUnusedGlobalSymbols
+  - name: YAMLSchemaDeprecation
+#Disable inspections
+#exclude:
+#  - name: <SomeDisabledInspectionId>
+#    paths:
+#      - <path/where/not/run/inspection>
+#Execute shell command before Qodana execution (Applied in CI/CD pipeline)
+#bootstrap: sh ./prepare-qodana.sh
+#Install IDE plugins before Qodana execution (Applied in CI/CD pipeline)
+#plugins:
+#  - id: <plugin.id> #(plugin id can be found at https://plugins.jetbrains.com)
+#Specify Qodana linter for analysis (Applied in CI/CD pipeline)
+linter: jetbrains/qodana-js:2023.3
